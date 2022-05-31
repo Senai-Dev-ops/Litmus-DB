@@ -1,4 +1,4 @@
-/* Comandos mais usados*/
+/* Comandos mais usados
 select * from BKP_USUARIO.LOG_USUARIO;
 
 USE usuario;
@@ -6,7 +6,7 @@ USE usuario;
 SELECT * FROM usuarios;
 
 DESC usuarios;
-
+*/
 
 
 /*Criação da DATABASE de usuarios*/
