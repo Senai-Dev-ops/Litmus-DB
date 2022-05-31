@@ -15,6 +15,7 @@ CREATE DATABASE usuario;
 
 use usuario;
 
+
 /* Criando Tabela Usuarios*/
 
 CREATE TABLE usuarios (
@@ -42,6 +43,7 @@ CREATE DATABASE BKP_USUARIO;
 
 use BKP_USUARIO;
 
+
 /*Criando a tabela de LOG do usuário*/
 
 CREATE TABLE LOG_USUARIO(
@@ -64,6 +66,7 @@ USUARIO VARCHAR(30),
 EVENTO CHAR(1)
 );
 
+
 /* Criando Triggers */
 
 USE usuario;
@@ -85,13 +88,12 @@ $
 
 DELIMITER ;
 
-
 /* DADO PARA TESTAR TRIGGER DE UPDATE */
 
 UPDATE usuarios  SET nome ='TESTE01' WHERE idUsuario = '1';
 
 
- /* Trigger de Insert */
+/* Trigger de Insert */
 
 DELIMITER $
 CREATE TRIGGER tr_insert
@@ -112,9 +114,7 @@ DELIMITER ;
 INSERT INTO usuarios VALUES(7,'TESTE7','TESTE7@IG.COM','123','17745655912',False,'2022-02-22');
 
 
-
-
- /* Trigger Delete */
+/* Trigger Delete */
 
 DELIMITER $
 CREATE TRIGGER tr_delete
@@ -127,27 +127,32 @@ begin
        now(), current_user(), 'D');
 end
 $
+
 DELIMITER ;
 
-
 /* DADO PARA TESTAR TRIGGER DE DELETE */
+
 DELETE FROM usuarios WHERE idUsuario='3';
 
 
 /* Selects para uma melhor visualização do que cada trigger alterou/deletou/inseriu*/
-		   
+	
+	
 /* Select da Trigger Update */
+
 SELECT nome_anterior,nome_atual, email_anterior,email_atual,senha_anterior, senha_atual,CPF_anterior, CPF_atual, ADM_anterior, ADM_atual,
  DATANASC_anterior, DATANASC_atual,Data_de_modificacao, USUARIO, EVENTO
 FROM BKP_USUARIO.LOG_USUARIO
 WHERE EVENTO = 'U';
 
 /*Select da Trigger Delete */
+
 SELECT nome_anterior, email_anterior, senha_anterior, CPF_anterior, ADM_anterior, DATANASC_anterior, Data_de_modificacao, USUARIO, EVENTO
 FROM BKP_USUARIO.LOG_USUARIO
 WHERE EVENTO = 'D';
 
 /* Select da Trigger Insert */
+
 SELECT nome_atual, email_atual, senha_atual, CPF_atual, ADM_atual , DATANASC_atual, Data_de_modificacao, USUARIO, EVENTO
 FROM BKP_USUARIO.LOG_USUARIO
 WHERE EVENTO = 'I';
