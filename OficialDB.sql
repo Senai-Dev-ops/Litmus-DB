@@ -173,7 +173,6 @@ SELECT * FROM maquinas;
 
 /* Criação de Usuario BACKEND */
 
-CREATE USER 'backend'@'%' IDENTIFIED BY 'senai@115';
 GRANT CREATE, DELETE, INSERT, SELECT, UPDATE ON * . * TO 'backend'@'%';
 FLUSH PRIVILEGES;
 
