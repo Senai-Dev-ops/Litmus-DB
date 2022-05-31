@@ -1,14 +1,12 @@
-/* Comandos mais usados
+/* Comandos mais usados*/
+select * from BKP_USUARIO.LOG_USUARIO;
 
-       select * from BKP_USUARIO.LOG_USUARIO;
+USE usuario;
 
-       USE usuario;
+SELECT * FROM usuarios;
 
-       SELECT * FROM usuarios;
+DESC usuarios;
 
-       DESC usuarios;
-
-*/
 
 
 /*Criação da DATABASE de usuarios*/
@@ -111,7 +109,7 @@ DELIMITER ;
 
 /* DADO PARA TESTAR TRIGGER DE INSERT */
 
-INSERT INTO usuarios VALUES(7,'TESTE7','TESTE7@IG.COM','123','17745655912',False,'2000-01-22');
+INSERT INTO usuarios VALUES(7,'TESTE7','TESTE7@IG.COM','123','17745655912',False,'2022-02-22');
 
 
 
@@ -133,7 +131,6 @@ DELIMITER ;
 
 
 /* DADO PARA TESTAR TRIGGER DE DELETE */
-
 DELETE FROM usuarios WHERE idUsuario='3';
 
 
@@ -161,7 +158,7 @@ WHERE EVENTO = 'I';
 
 USE usuario;
 
-CREATE TABLE IF NOT EXISTS Maquinas(
+CREATE TABLE IF NOT EXISTS maquinas(
 id INTEGER NOT NULL auto_increment ,
 rotacao INTEGER NOT NULL,
 temperatura INTEGER NOT NULL,
@@ -170,13 +167,12 @@ datahora VARCHAR(255) NOT NULL,
 PRIMARY KEY (id)
 );
 
-INSERT INTO Maquinas VALUES(1,10,28,12,NOW());
+INSERT INTO maquinas VALUES(1,10,28,12,NOW());
 
-SELECT * FROM Maquinas;
+SELECT * FROM maquinas;
 
 /* Criação de Usuario BACKEND */
 
-CREATE USER 'backend'@'%' IDENTIFIED BY 'senai@115';
 GRANT CREATE, DELETE, INSERT, SELECT, UPDATE ON * . * TO 'backend'@'%';
 FLUSH PRIVILEGES;
 
