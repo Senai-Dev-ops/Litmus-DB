@@ -31,7 +31,8 @@ USE usuario;
 
  /* Trigger de Update */
 
-DELIMITER $
+DELIMITER $ 
+
 CREATE TRIGGER tr_update
 AFTER UPDATE ON usuarios
 for each row
