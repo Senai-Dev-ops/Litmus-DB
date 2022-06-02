@@ -42,13 +42,14 @@ begin
        NEW.email,OLD.senha,NEW.senha,OLD.CPF,NEW.CPF,OLD.ADM,NEW.ADM,OLD.DATANASC,NEW.DATANASC,
        now(), current_user(), 'U');
 end
-$
+$ 
 
 DELIMITER ;
 
 /* Trigger de Insert */
 
-DELIMITER $
+DELIMITER $ 
+
 CREATE TRIGGER tr_insert
 AFTER INSERT ON usuarios
 for each row
@@ -64,7 +65,8 @@ DELIMITER ;
 
 /* Trigger Delete */
 
-DELIMITER $
+DELIMITER $ 
+
 CREATE TRIGGER tr_delete
 BEFORE DELETE ON usuarios
 for each row
