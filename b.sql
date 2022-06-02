@@ -1,8 +1,8 @@
 /*Criação da DATABASE de Backup*/
 
-CREATE DATABASE BKP_USUARIO;
+CREATE DATABASE BKP_USUARIO; 
 
-use BKP_USUARIO;
+use BKP_USUARIO; 
 
 CREATE TABLE LOG_USUARIO(
 idBackup INT PRIMARY KEY auto_increment,
@@ -26,7 +26,7 @@ EVENTO CHAR(1)
 
 /* Criando Triggers */
 
-USE usuario;
+USE usuario; 
 
 
  /* Trigger de Update */
@@ -44,7 +44,7 @@ begin
 end
 $ 
 
-DELIMITER ;
+DELIMITER ; 
 
 /* Trigger de Insert */
 
@@ -59,9 +59,9 @@ begin
        NEW.email,NULL,NEW.senha,NULL,NEW.CPF,NULL,NEW.ADM,NULL,NEW.DATANASC,
        now(), current_user(), 'I');
 end
-$
+$ 
 
-DELIMITER ;
+DELIMITER ; 
 
 /* Trigger Delete */
 
@@ -76,6 +76,6 @@ begin
        NULL,OLD.senha,NULL,OLD.CPF,NULL,OLD.ADM,NULL,OLD.DATANASC,NULL,
        now(), current_user(), 'D');
 end
-$
+$ 
 
-DELIMITER ;
+DELIMITER ; 
