@@ -22,7 +22,7 @@ DATANASC date NOT NULL
 
 /* Criação da tabela Maquinas */
 
-CREATE TABLE maquinas (
+CREATE TABLE Maquinas (
 id INTEGER NOT NULL auto_increment ,
 rotacao INTEGER NOT NULL,
 temperatura INTEGER NOT NULL,
